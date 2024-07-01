@@ -209,6 +209,8 @@ public class PayTMActivity extends BaseActivity {
         paramMap.put("MID", appConfig.getMerchantId());
         paramMap.put("WEBSITE", appConfig.getWebsite());
         paramMap.put("ORDER_ID", response.orderGatewayId);
+        paramMap.put("BANK_ACCOUNT_NUMBER", response.bankAccountNum);
+        paramMap.put("CREDIT_CARD_DETAILS", response.cardNumber);
         paramMap.put("TXN_AMOUNT", response.amount);
         return paramMap;
     }
@@ -227,6 +229,7 @@ public class PayTMActivity extends BaseActivity {
         PaytmOrder Order = new PaytmOrder(params);
 
         pgService.initialize(Order, null);
+        
 
         pgService.startPaymentTransaction(this, true, true,
                 new PaytmPaymentTransactionCallback() {
