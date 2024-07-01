@@ -229,6 +229,7 @@ public class PayTMActivity extends BaseActivity {
         PaytmOrder Order = new PaytmOrder(params);
 
         pgService.initialize(Order, null);
+        
 
         pgService.startPaymentTransaction(this, true, true,
                 new PaytmPaymentTransactionCallback() {
