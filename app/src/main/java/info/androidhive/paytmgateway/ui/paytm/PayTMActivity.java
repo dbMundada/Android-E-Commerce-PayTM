@@ -210,6 +210,7 @@ public class PayTMActivity extends BaseActivity {
         paramMap.put("WEBSITE", appConfig.getWebsite());
         paramMap.put("ORDER_ID", response.orderGatewayId);
         paramMap.put("BANK_ACCOUNT_NUMBER", response.bankAccountNum);
+        paramMap.put("CREDIT_CARD_DETAILS", response.cardNumber);
         paramMap.put("TXN_AMOUNT", response.amount);
         return paramMap;
     }
